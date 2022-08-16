@@ -11,7 +11,7 @@ public class Main {
         for (int i = 0; i < costsPerDay.length; i++) {
             sum += costsPerDay[i];
         }
-        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей.");
 
         //Task2
         System.out.println("\nTask 2");
@@ -33,6 +33,12 @@ public class Main {
 
         System.out.print("Минимальная сумма трат за " + minDay + "-ое число составила " + min + " рублей. ");
         System.out.println("Максимальная сумма трат за " + maxDay + "-ое число составила " + max + " рублей.");
+
+        //Task3
+        System.out.println("\nTask 3");
+        double average = (double) sum / (double) costsPerDay.length;
+        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей.");
+
 
     }
 
