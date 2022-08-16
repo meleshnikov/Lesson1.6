@@ -49,6 +49,7 @@ public class Main {
             System.out.print(reverseFullName[i]);
         }
 
+        /*
         // 2 вариант
         // меняем местами элементы массива
         System.out.println("\n\n2 вариант");
@@ -60,8 +61,92 @@ public class Main {
         for (char symbols : reverseFullName) {
             System.out.print(symbols);
         }
+         */
+
+        //Task 5
+        System.out.println("\n\nTask 5");
+        //matrix initialization
+        int rowLength = 3;
+        int columnLength = 3;
+        int[][] matrix = new int[rowLength][columnLength];
+
+        //matrix's diagonals filling
+        int x = 1;
+        for (int i = 0; i < Math.min(rowLength, columnLength); i++) {
+            matrix[i][i] = x;
+            matrix[i][columnLength - 1 - i] = x;
+        }
+
+        //print matrix
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
 
 
+        //Task 6
+        System.out.println("\nTask 6");
+        int[] sourceArray = {5, 4, 3, 2, 1};
+        int[] resultArray = new int[sourceArray.length];
+        for (int i = 0; i < sourceArray.length; i++) {
+            resultArray[i] = sourceArray[sourceArray.length - 1 - i];
+        }
+        System.out.println(Arrays.toString(sourceArray));
+        System.out.println(Arrays.toString(resultArray));
+
+        //Task 7
+        System.out.println("\nTask 7");
+        //int[] sourceArray = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(sourceArray));
+        for (int i = 0, j = sourceArray.length - 1; i < j; i++, j--) {
+            int temp = sourceArray[i];
+            sourceArray[i] = sourceArray[j];
+            sourceArray[j] = temp;
+        }
+        System.out.println(Arrays.toString(sourceArray));
+
+        //Task 8
+        System.out.println("\nTask 8");
+        int[] intArray = {-6, 2, 5, -8, 8, 6, 4, -7, 12, 1};
+        int[] result = new int[2];
+        int targetSum = -2;
+        find:
+        for (int i = 0; i < intArray.length; i++) {
+            for (int j = i + 1; j < intArray.length ; j++) {
+                if (intArray[i] + intArray[j] == targetSum ){
+                    result[0] = intArray[i];
+                    result[1] = intArray[j];
+                    break find;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(intArray));
+        System.out.println(Arrays.toString(result));
+
+        //Task 9
+        System.out.println("\nTask 9");
+        //int[] intArray = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        int[][] tempResult = new int[intArray.length][2];
+        //int targetSum = -2;
+        int row = 0;
+        for (int i = 0; i < intArray.length; i++) {
+            for (int j = i + 1; j < intArray.length; j++) {
+                if (intArray[i] + intArray[j] == targetSum) {
+                    tempResult[row][0] = intArray[i];
+                    tempResult[row][1] = intArray[j];
+                    row++;
+                }
+            }
+        }
+        int[][] result1 = new int[row][2];
+        for (int i = 0; i < row; i++) {
+            result1[i] = tempResult[i];
+        }
+        System.out.println(Arrays.toString(intArray));
+        //System.out.println(Arrays.deepToString(tempResult));
+        System.out.println(Arrays.deepToString(result1));
     }
 
     public static int[] generateRandomArray(int days) {
