@@ -39,6 +39,28 @@ public class Main {
         double average = (double) sum / (double) costsPerDay.length;
         System.out.println("Средняя сумма трат за месяц составила " + average + " рублей.");
 
+        //Task4
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+
+        // 1 вариант
+        // просто печатаем массив в обратном порядке
+        System.out.println("\nTask 4 \n1 вариант");
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
+
+        // 2 вариант
+        // меняем местами элементы массива
+        System.out.println("\n\n2 вариант");
+        for (int i = 0, j = reverseFullName.length - 1; i < j; i++, j--) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[j];
+            reverseFullName[j] = temp;
+        }
+        for (char symbols : reverseFullName) {
+            System.out.print(symbols);
+        }
+
 
     }
 
